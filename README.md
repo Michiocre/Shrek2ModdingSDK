@@ -4,6 +4,15 @@ This repository consists of the Shrek 2 Modding SDK, used to create and play mod
 # How to Get Started
 - Documentation is currently being developed.
 
+## Creating a new Mod
+- Copy the `Shrek2TestMod` folder inside `Shrek2TestProjects`
+- Rename the folder and the three `vcxproj` files inside
+- Open the `Shrek2ModdingSDK` solution in Visual Studio
+- Add the copied project to the solution
+- When building make sure to set the build configuration to `Release` and `Win32`
+- Build both the `Shrek2ModdingSDK` project and your new project
+- The final dll will be placed in the `builds` folder of the solution root folder
+
 # How to Play Mods
 - Go to <a href="https://kevinjpetersen.itch.io/shrek-2-mod-manager" target="_blank">https://kevinjpetersen.itch.io/shrek-2-mod-manager</a> and download the Shrek 2 Mod Manager. Then add any mods that you have to play them!
 
