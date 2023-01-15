@@ -18,43 +18,35 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\dllmain.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\Entity.h" />
-    <ClInclude Include="src\framework.h" />
-    <ClInclude Include="src\Vector.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{2f7cc65d-1146-4858-a873-9f6078119462}</ProjectGuid>
-    <RootNamespace>Shrek2TestMod</RootNamespace>
+    <ProjectGuid>{74978593-e38d-4615-b57f-dfb71b39ef8e}</ProjectGuid>
+    <RootNamespace>Shrek2ModdingSDK</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -80,48 +72,54 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>$(LibraryPath);$(WindowsSDK_LibraryPath_x64);$(SolutionDir)dependencies\detours\lib.X86;$(SolutionDir)dependencies\dxsdk\lib;</LibraryPath>
-    <OutDir>$(SolutionDir)builds\</OutDir>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)dependencies\detours\include;$(SolutionDir)dependencies\dxsdk\include;</IncludePath>
+    <OutDir>$(ProjectDir)lib\</OutDir>
     <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</ExternalIncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(SolutionDir)dependencies\detours\lib;$(SolutionDir)dependencies\dxsdk\lib</LibraryPath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)dependencies\detours\include;$(SolutionDir)dependencies\dxsdk\include</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)builds\</OutDir>
-    <LibraryPath>$(LibraryPath);$(SolutionDir)dependencies\detours\lib.X86;$(SolutionDir)dependencies\dxsdk\lib;</LibraryPath>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)dependencies\detours\include;$(SolutionDir)dependencies\dxsdk\include;</IncludePath>
+    <OutDir>$(ProjectDir)lib\</OutDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)dependencies\detours\include;$(SolutionDir)dependencies\dxsdk\include</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(SolutionDir)dependencies\detours\lib;$(SolutionDir)dependencies\dxsdk\lib</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
-    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)dependencies\detours\include;$(SolutionDir)dependencies\dxsdk\include;</ExternalIncludePath>
-    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(SolutionDir)Shrek2ModdingSDK\lib;$(SolutionDir)dependencies\detours\lib.X86;$(SolutionDir)dependencies\dxsdk\lib;</LibraryPath>
-    <OutDir>$(SolutionDir)\$(Configuration)\</OutDir>
-    <IntDir>$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(ProjectDir)lib\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)dependencies\detours\include;$(SolutionDir)dependencies\dxsdk\include</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(SolutionDir)dependencies\detours\lib;$(SolutionDir)dependencies\dxsdk\lib</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;SHREK2TESTMOD_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Shrek2ModdingSDK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>
+      </SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EnableUAC>false</EnableUAC>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);$(SolutionDir)Shrek2ModdingSDK\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Shrek2ModdingSDK.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
     </Link>
+    <Lib>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+    </Lib>
+    <PreBuildEvent>
+      <Command>copy $(ProjectDir)src\*.h $(ProjectDir)include\ &amp;&amp; copy $(ProjectDir)src\*.hpp $(ProjectDir)include\</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -129,40 +127,45 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;SHREK2TESTMOD_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Shrek2ModdingSDK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <ExceptionHandling>Async</ExceptionHandling>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <ExceptionHandling>Async</ExceptionHandling>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>
+      </SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EnableUAC>false</EnableUAC>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);$(SolutionDir)Shrek2ModdingSDK\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Shrek2ModdingSDK.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
-      <IgnoreSpecificDefaultLibraries>libci.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
     </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libci.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <AdditionalDependencies>legacy_stdio_definitions.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <PreBuildEvent>
+      <Command>copy $(ProjectDir)src\*.h $(ProjectDir)include\ &amp;&amp; copy $(ProjectDir)src\*.hpp $(ProjectDir)include\</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;SHREK2TESTMOD_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>
+      </SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EnableUAC>false</EnableUAC>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -171,20 +174,82 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;SHREK2TESTMOD_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>
+      </SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EnableUAC>false</EnableUAC>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Shrek2.cpp" />
+    <ClCompile Include="src\Shrek2ActorList.cpp" />
+    <ClCompile Include="src\Shrek2Config.cpp" />
+    <ClCompile Include="src\Shrek2Events.cpp" />
+    <ClCompile Include="src\Shrek2Functions.cpp" />
+    <ClCompile Include="src\Shrek2Input.cpp" />
+    <ClCompile Include="src\Shrek2Inventory.cpp" />
+    <ClCompile Include="src\Shrek2Logging.cpp" />
+    <ClCompile Include="src\Shrek2Maps.cpp" />
+    <ClCompile Include="src\Shrek2Memory.cpp" />
+    <ClCompile Include="src\Shrek2Pointers.cpp" />
+    <ClCompile Include="src\Shrek2Position.cpp" />
+    <ClCompile Include="src\Shrek2Rect.cpp" />
+    <ClCompile Include="src\Shrek2Sound.cpp" />
+    <ClCompile Include="src\Shrek2StaticVars.cpp" />
+    <ClCompile Include="src\Shrek2Storage.cpp" />
+    <ClCompile Include="src\Shrek2Texture.cpp" />
+    <ClCompile Include="src\Shrek2Textures.cpp" />
+    <ClCompile Include="src\Shrek2Timer.cpp" />
+    <ClCompile Include="src\Shrek2Trigger.cpp" />
+    <ClCompile Include="src\Shrek2Triggers.cpp" />
+    <ClCompile Include="src\Shrek2UI.cpp" />
+    <ClCompile Include="src\Shrek2Utils.cpp" />
+    <ClCompile Include="src\Shrek2Vector2.cpp" />
+    <ClCompile Include="src\Shrek2Vector3.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\framework.h" />
+    <ClInclude Include="src\json.hpp" />
+    <ClInclude Include="src\Shrek2.h" />
+    <ClInclude Include="src\Shrek2ActorList.h" />
+    <ClInclude Include="src\Shrek2ActorModels.h" />
+    <ClInclude Include="src\Shrek2ActorTypes.h" />
+    <ClInclude Include="src\Shrek2Config.h" />
+    <ClInclude Include="src\Shrek2DirectX.h" />
+    <ClInclude Include="src\Shrek2Events.h" />
+    <ClInclude Include="src\Shrek2Fonts.h" />
+    <ClInclude Include="src\Shrek2Functions.h" />
+    <ClInclude Include="src\Shrek2Input.h" />
+    <ClInclude Include="src\Shrek2Inventory.h" />
+    <ClInclude Include="src\Shrek2Logging.h" />
+    <ClInclude Include="src\Shrek2Maps.h" />
+    <ClInclude Include="src\Shrek2Memory.h" />
+    <ClInclude Include="src\Shrek2ModdingSDK.h" />
+    <ClInclude Include="src\Shrek2Pointers.h" />
+    <ClInclude Include="src\Shrek2Position.h" />
+    <ClInclude Include="src\Shrek2Rect.h" />
+    <ClInclude Include="src\Shrek2Sound.h" />
+    <ClInclude Include="src\Shrek2StaticVars.h" />
+    <ClInclude Include="src\Shrek2Storage.h" />
+    <ClInclude Include="src\Shrek2Texture.h" />
+    <ClInclude Include="src\Shrek2Textures.h" />
+    <ClInclude Include="src\Shrek2Timer.h" />
+    <ClInclude Include="src\Shrek2TimerLib.h" />
+    <ClInclude Include="src\Shrek2Trigger.h" />
+    <ClInclude Include="src\Shrek2Triggers.h" />
+    <ClInclude Include="src\Shrek2UI.h" />
+    <ClInclude Include="src\Shrek2Utils.h" />
+    <ClInclude Include="src\Shrek2Vector2.h" />
+    <ClInclude Include="src\Shrek2Vector3.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
 </Project>
