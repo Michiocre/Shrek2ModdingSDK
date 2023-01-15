@@ -17,7 +17,7 @@ void OnTick()
 		system("cls");
 
 		auto shreks = Game.Actors.GetActors(79);
-		auto looktargets = Game.Actors.GetActors(2582);
+		auto actors = Game.Actors.GetActors();;
 
 		Game.LogToConsole("Shreks");
 		Game.LogToConsole("------");
@@ -31,9 +31,9 @@ void OnTick()
 		}
 		Game.LogToConsole("");
 
-		Game.LogToConsole("KWLookTargets");
+		Game.LogToConsole("Actors");
 		Game.LogToConsole("------");
-		for (auto& p : looktargets)
+		for (auto& p : actors)
 		{
 			std::string label = p->GetLabel();
 			if (label.empty()) continue;

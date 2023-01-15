@@ -72,14 +72,15 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>C:\Shrek 2 Modding SDK Library;$(LibraryPath)</LibraryPath>
-    <OutDir>C:\Users\Kevin\Games\Shrek 2 Modding Folder\System\Shrek 2 Mods\Shrek 2 Test Mod\</OutDir>
+    <LibraryPath>$(LibraryPath);F:\Shrek\Modding\DXF\DXSDK\lib;F:\Shrek\Modding\Detours-4.0.1\lib.X86</LibraryPath>
+    <OutDir>.\Debug\</OutDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);F:\Shrek\Modding\DXF\DXSDK\include;F:\Shrek\Modding\Detours-4.0.1\include</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\..\..\..\Users\Kevin\Downloads</OutDir>
-    <LibraryPath>C:\Shrek 2 Modding SDK Library;$(LibraryPath);C:\Shrek 2 Modding SDK Library\DirectX8SDK</LibraryPath>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Shrek 2 Modding SDK Library\DirectX8SDK</IncludePath>
+    <OutDir>.\Release\</OutDir>
+    <LibraryPath>$(LibraryPath);F:\Shrek\Modding\DXF\DXSDK\lib;F:\Shrek\Modding\Detours-4.0.1\lib.X86</LibraryPath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);F:\Shrek\Modding\DXF\DXSDK\include;F:\Shrek\Modding\Detours-4.0.1\include</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -95,15 +96,16 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Projects\Shrek2ModdingSDK\Shrek2ModdingSDK\Shrek2ModdingSDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Shrek\Modding\Shrek2ModdingSDK-master\Shrek2ModdingSDK\Shrek2ModdingSDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalLibraryDirectories>C:\Shrek 2 Modding SDK Library;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);F:\Shrek\Modding\Shrek2ModdingSDK-master\Shrek2ModdingSDK\Shrek2ModdingSDK\Debug</AdditionalLibraryDirectories>
       <AdditionalDependencies>Shrek2ModdingSDK.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -117,7 +119,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Projects\Shrek2ModdingSDK\Shrek2ModdingSDK\Shrek2ModdingSDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Shrek\Modding\Shrek2ModdingSDK-master\Shrek2ModdingSDK\Shrek2ModdingSDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>Async</ExceptionHandling>
     </ClCompile>
     <Link>
@@ -126,7 +128,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalLibraryDirectories>C:\Shrek 2 Modding SDK Library;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);F:\Shrek\Modding\Shrek2ModdingSDK-master\Shrek2ModdingSDK\Shrek2ModdingSDK\Release</AdditionalLibraryDirectories>
       <AdditionalDependencies>Shrek2ModdingSDK.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <IgnoreSpecificDefaultLibraries>libci.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
