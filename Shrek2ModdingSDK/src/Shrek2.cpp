@@ -80,7 +80,7 @@ void Shrek2::Initialize(std::string ModName, bool ShowConsoleByDefault = true)
 		IsModRunning = true;
 		Sounds = Shrek2Sound(Shrek2StaticVars::DllFolderPath);
 		Variables = Shrek2Pointers();
-		Functions = Shrek2Functions(DllName);
+		Functions = Shrek2Functions("Commands");
 		Config = Shrek2Config(Shrek2StaticVars::DllFolderPath);
 		Storage = Shrek2Storage(Shrek2StaticVars::DllFolderPath);
 		Input.DllPath = Shrek2StaticVars::DllFolderPath;
@@ -88,12 +88,19 @@ void Shrek2::Initialize(std::string ModName, bool ShowConsoleByDefault = true)
 
 		LogToConsole("DllName is: " + DllName);
 
-		Shrek2::WindowHandle = FindWindowA(NULL, "Shrek 2");
-
 		bool findWindow = true;
 		while (findWindow) {
 			try {
-				HWND wnd = FindWindowA(NULL, "Shrek 2");
+				HWND wnd = FindWindowA(NULL, "Shrek 2 Multi");
+
+				if (wnd) {
+					Shrek2::WindowHandle = wnd;
+					findWindow = false;
+					break;
+				}
+				
+				wnd = FindWindowA(NULL, "Shrek 2");
+
 				if (wnd) {
 					Shrek2::WindowHandle = wnd;
 					findWindow = false;

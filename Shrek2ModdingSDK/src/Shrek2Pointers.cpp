@@ -64,6 +64,17 @@ float Shrek2Pointers::GetVelocityZ() {
     return Shrek2Memory::ReadFloat("Engine.dll", 0x004DFFF8, 0x68, 0x9C, 0x664, 0x170);
 }
 
+Shrek2Vector3 Shrek2Pointers::GetVelocity() {
+    return Shrek2Vector3(GetVelocityX(), GetVelocityY(), GetVelocityZ());
+}
+bool Shrek2Pointers::SetVelocity(Shrek2Vector3 Velocity) {
+    bool success = true;
+    success = SetVelocityX(Velocity.X);
+    success = SetVelocityY(Velocity.Y);
+    success = SetVelocityZ(Velocity.Z);
+    return success;
+}
+
 bool Shrek2Pointers::SetRotationX(short int RotationX) {
     return Shrek2Memory::WriteShortInt(RotationX, "Engine.dll", 0x004DFFF8, 0x68, 0x9C, 0x664, 0x15C);
 }
@@ -83,6 +94,17 @@ bool Shrek2Pointers::SetRotationZ(short int RotationZ) {
 }
 short int Shrek2Pointers::GetRotationZ() {
     return Shrek2Memory::ReadShortInt("Engine.dll", 0x004DFFF8, 0x68, 0x9C, 0x664, 0x164);
+}
+
+Shrek2Vector3Int Shrek2Pointers::GetRotation() {
+    return Shrek2Vector3Int(GetRotationX(), GetRotationY(), GetRotationZ());
+}
+bool Shrek2Pointers::SetRotation(Shrek2Vector3Int rotation) {
+    bool success = true;
+    success = SetRotationX(rotation.X);
+    success = SetRotationY(rotation.Y);
+    success = SetRotationZ(rotation.Z);
+    return success;
 }
 
 bool Shrek2Pointers::SetGodMode(bool GodMode) {
@@ -750,6 +772,17 @@ bool Shrek2Pointers::SetAccelerationZ(float AccelerationZ) {
 }
 float Shrek2Pointers::GetAccelerationZ() {
     return Shrek2Memory::ReadFloat("Engine.dll", 0x004DFFF8, 0x68, 0x9C, 0x664, 0x5B8);
+}
+
+Shrek2Vector3 Shrek2Pointers::GetAcceleration() {
+    return Shrek2Vector3(GetAccelerationX(), GetAccelerationY(), GetAccelerationZ());
+}
+bool Shrek2Pointers::SetAcceleration(Shrek2Vector3 Acceleration) {
+    bool success = true;
+    success = SetAccelerationX(Acceleration.X);
+    success = SetAccelerationY(Acceleration.Y);
+    success = SetAccelerationZ(Acceleration.Z);
+    return success;
 }
 
 float Shrek2Pointers::GetCamAngleX() {

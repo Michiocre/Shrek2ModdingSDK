@@ -30,6 +30,9 @@ public:
 	float GetVelocityZ();
 	bool SetVelocityZ(float VelocityZ);
 
+	Shrek2Vector3 GetVelocity();
+	bool SetVelocity(Shrek2Vector3 Velocity);
+
 	short int GetRotationX();
 	bool SetRotationX(short int RotationX);
 
@@ -38,6 +41,9 @@ public:
 
 	short int GetRotationZ();
 	bool SetRotationZ(short int RotationZ);
+
+	Shrek2Vector3Int GetRotation();
+	bool SetRotation(Shrek2Vector3Int rotation);
 
 	bool GetGodMode();
 	bool SetGodMode(bool GodMode);
@@ -318,6 +324,9 @@ public:
 
 	float GetAccelerationZ();
 	bool SetAccelerationZ(float AccelerationZ);
+
+	Shrek2Vector3 GetAcceleration();
+	bool SetAcceleration(Shrek2Vector3 Acceleration);
 
 	float GetCamAngleX();
 
