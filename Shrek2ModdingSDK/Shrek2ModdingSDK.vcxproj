@@ -79,7 +79,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Builds\$(ProjectName)\lib</OutDir>
+    <OutDir>$(SolutionDir)Builds\$(ProjectName)\lib\</OutDir>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)Dependencies\detours\include;$(SolutionDir)Dependencies\dxsdk\include</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(SolutionDir)Dependencies\detours\lib.X86;$(SolutionDir)Dependencies\dxsdk\lib</LibraryPath>
   </PropertyGroup>
@@ -154,7 +154,7 @@
       </Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>copy $(ProjectDir)src\*.h $(SolutionDir)Builds\$(ProjectName)\include\ &amp;&amp; copy $(ProjectDir)src\*.hpp $(SolutionDir)Builds\$(ProjectName)\include\</Command>
+      <Command>xcopy $(ProjectDir)src\*.h $(SolutionDir)Builds\$(ProjectName)\include\ &amp;&amp; xcopy $(ProjectDir)src\*.hpp $(SolutionDir)Builds\$(ProjectName)\include\</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
