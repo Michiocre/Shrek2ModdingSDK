@@ -364,5 +364,5 @@ FodyWeavers.xsd
 
 Shrek2Projects/
 
-Builds/**/*.exp
 !Builds/**/*.dll
+!Builds/**/*.pdb
